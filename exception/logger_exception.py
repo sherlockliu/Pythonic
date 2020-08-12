@@ -7,5 +7,9 @@ def log_exception():
         raise Exception('kk')
     except Exception as e:
         logging.error(e)
+    return 'lll'
 
-log_exception()
+
+l = log_exception()
+
+print(l)

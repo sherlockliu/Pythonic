@@ -1,5 +1,5 @@
 # ！/usr/bin/python
-from tornado import ioloop, gen
+from tornado import ioloop
 
 
 async def cal(num):
@@ -8,13 +8,16 @@ async def cal(num):
     print(x)
 
 
-# @gen.coroutine
 async def calculator(num):
-    result = 0
-    for i in range(0, num):
-        result += i
-    print(f'result is {result}')
-    return result
+    try:
+        result = 0
+        for i in range(0, num):
+            result += i
+        # print(f'result is {result}')
+        raise Exception()
+        return result
+    except Exception:
+        pass
 
 
 async def main():
